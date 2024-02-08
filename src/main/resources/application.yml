@@ -1,0 +1,25 @@
+server:
+  max-http-header-size: 32KB
+  http2:
+    enabled: true
+  port: 8080
+  error:
+    path: /mvc-error
+    include-message: always
+    include-exception: true
+    include-stacktrace: always
+
+  servlet:
+    context-path: /demo
+    
+management:
+  metrics:
+    mongo:
+      command:
+        enabled: false
+      connectionpool:
+        enabled: false
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1
